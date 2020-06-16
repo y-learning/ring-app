@@ -1,12 +1,12 @@
 (ns ring-app.core
-  (:require [ring.adapter.jetty :as jetty]))
+  (:require [ring.adapter.jetty :as jetty]
+            [ring.util.response :as response]))
 
 (defn handler [request]
-  {:status  200
-   :headers {"Content-Type" "text/html"}
-   :body    (str "<html> <body> your IP is: "
-                 (:remote-addr request)
-                 "</body> </html>")})
+  (response/response
+    (str "<html><body> your IP is: "
+         (:remote-addr request)
+         "</body></html>")))
 
 (defn -main []
   (println "The server is starting...")
