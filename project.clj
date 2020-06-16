@@ -6,6 +6,8 @@
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [javax.servlet/servlet-api "2.5"]
                  [ring "1.8.1"]
-                 [metosin/ring-http-response "0.9.1"]]
+                 [metosin/ring-http-response "0.9.1"]
+                 [ring-middleware-format "0.7.4"]
+                 [compojure "1.6.1"]]
   :repl-options {:init-ns ring-app.core}
   :main ring-app.core)
