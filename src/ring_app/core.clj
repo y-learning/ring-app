@@ -1,10 +1,10 @@
 (ns ring-app.core
   (:require [ring.adapter.jetty :as jetty]
-            [ring.util.response :as response]
+            [ring.util.http-response :as response]
             [ring.middleware.reload :refer [wrap-reload]]))
 
 (defn handler [request]
-  (response/response
+  (response/ok
     (str "<html><body> Your IP address is: "
          (:remote-addr request)
          "</body></html>")))
