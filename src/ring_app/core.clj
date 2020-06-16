@@ -4,7 +4,7 @@
 
 (defn handler [request]
   (response/response
-    (str "<html><body> your IP is: "
+    (str "<html><body> Your IP address is: "
          (:remote-addr request)
          "</body></html>")))
 
